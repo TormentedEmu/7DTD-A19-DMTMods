@@ -1,0 +1,109 @@
+<configs>
+	<append xpath="/blocks">
+		<block name="BlockTest01">
+			<property name="CreativeMode" value="Player"/>
+			<property name="Mesh" value="TE_TextureSample"/>
+			<property name="CustomIcon" value="stainlessSteelMaster"/>
+			<property name="Texture" value="0"/>
+			<property name="Material" value="MwoodMetal"/>
+			<property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+			<property name="StabilitySupport" value="true"/>
+			<property name="ImposterDontBlock" value="true"/>
+			<property name="Place" value="TowardsPlacerInverted"/>
+			<property name="Stacknumber" value="500"/>
+			<property name="TakeDelay" value="0"/>
+		</block>
+
+    <block name="BlockTest02">
+      <property name="CreativeMode" value="Player"/>
+      <property name="Mesh" value="TE_TextureSample"/>
+      <property name="CustomIcon" value="stainlessSteelMaster"/>
+      <property name="Texture" value="1"/>
+      <property name="Material" value="MwoodMetal"/>
+      <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+      <property name="StabilitySupport" value="true"/>
+      <property name="ImposterDontBlock" value="true"/>
+      <property name="Place" value="TowardsPlacerInverted"/>
+      <property name="Stacknumber" value="500"/>
+    </block>
+
+    <block name="BlockTest03">
+      <property name="CreativeMode" value="Player"/>
+      <property name="Mesh" value="TE_TextureSample"/>
+      <property name="CustomIcon" value="stainlessSteelMaster"/>
+      <property name="Texture" value="2"/>
+      <property name="Material" value="MwoodMetal"/>
+      <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+      <property name="StabilitySupport" value="true"/>
+      <property name="ImposterDontBlock" value="true"/>
+      <property name="Place" value="TowardsPlacerInverted"/>
+      <property name="Stacknumber" value="500"/>
+    </block>
+
+    <block name="BlockTest04">
+      <property name="CreativeMode" value="Player"/>
+      <property name="Mesh" value="TE_TextureSample"/>
+      <property name="CustomIcon" value="stainlessSteelMaster"/>
+      <property name="Texture" value="3"/>
+      <property name="Material" value="Mmetal_medium"/>
+      <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+      <property name="StabilitySupport" value="true"/>
+      <property name="ImposterDontBlock" value="true"/>
+      <property name="Place" value="TowardsPlacerInverted"/>
+      <property name="Stacknumber" value="500"/>
+    </block>
+
+    <block name="BlockTest05">
+      <property name="CreativeMode" value="Player"/>
+      <property name="Mesh" value="TE_TextureSample"/>
+      <property name="CustomIcon" value="stainlessSteelMaster"/>
+      <property name="Texture" value="4"/>
+      <property name="Material" value="Mstone"/>
+      <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+      <property name="StabilitySupport" value="true"/>
+      <property name="ImposterDontBlock" value="true"/>
+      <property name="Place" value="TowardsPlacerInverted"/>
+      <property name="Stacknumber" value="500"/>
+    </block>
+
+    <block name="BlockTest06">
+      <property name="CreativeMode" value="Player"/>
+      <property name="Mesh" value="TE_TextureSample"/>
+      <property name="CustomIcon" value="stainlessSteelMaster"/>
+      <property name="Texture" value="5"/>
+      <property name="Material" value="Mstone"/>
+      <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+      <property name="StabilitySupport" value="true"/>
+      <property name="ImposterDontBlock" value="true"/>
+      <property name="Place" value="TowardsPlacerInverted"/>
+      <property name="Stacknumber" value="500"/>
+    </block>
+
+    <block name="BlockTest07">
+      <property name="CreativeMode" value="Player"/>
+      <property name="Mesh" value="TE_TextureSample"/>
+      <property name="CustomIcon" value="stainlessSteelMaster"/>
+      <property name="Texture" value="6"/>
+      <property name="Material" value="Mstone"/>
+      <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+      <property name="StabilitySupport" value="true"/>
+      <property name="ImposterDontBlock" value="true"/>
+      <property name="Place" value="TowardsPlacerInverted"/>
+      <property name="Stacknumber" value="500"/>
+    </block>
+
+    <block name="BlockTest08">
+      <property name="CreativeMode" value="Player"/>
+      <property name="Mesh" value="TE_TextureSample"/>
+      <property name="CustomIcon" value="stainlessSteelMaster"/>
+      <property name="Texture" value="7"/>
+      <property name="Material" value="Mstone"/>
+      <property name="Collide" value="movement,melee,bullet,arrow,rocket"/>
+      <property name="StabilitySupport" value="true"/>
+      <property name="ImposterDontBlock" value="true"/>
+      <property name="Place" value="TowardsPlacerInverted"/>
+      <property name="Stacknumber" value="500"/>
+    </block>
+
+  </append>
+</configs>

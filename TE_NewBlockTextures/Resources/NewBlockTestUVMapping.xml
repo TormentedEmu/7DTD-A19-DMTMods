@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<uvmapping>
+
+    <uv  id="0" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.3882353,0.3372549,0.3294118" globaluv="True" index="0" material="stone" texture="" />
+    <uv  id="1" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.3764706,0.372549,0.3294118" globaluv="True" index="1" material="stone" texture="" />
+    <uv  id="2" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.2980392,0.1882353,0.1372549" globaluv="True" index="2" material="stone" texture="" />
+    <uv  id="3" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.4078431,0.3803922,0.3294118" globaluv="True" index="3" material="dirt" texture="" />
+    <uv  id="4" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.4392157,0.427451,0.3960784" globaluv="True" index="4" material="stone" texture="" />
+    <uv  id="5" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.3215686,0.1411765,0.1372549" globaluv="True" index="5" material="cloth" texture="" />
+    <uv  id="6" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.3647059,0.3333333,0.2784314" globaluv="True" index="6" material="cloth" texture="" />
+    <uv  id="7" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.3098039,0.3058824,0.2588235" globaluv="True" index="7" material="cloth" texture="" />
+    
+</uvmapping>

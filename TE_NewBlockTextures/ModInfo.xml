@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+  <ModInfo>
+    <Name value="TE_NewBlockTextures" />
+    <Description value="Loads a set of new block textures(diff, norm, spec) as texture arrays" />
+    <Author value="TormentedEmu" />
+    <Version value="A19 b177" />
+    <Website value="" />
+  </ModInfo>
+  <DMT>
+    <dependencies />
+    <conflicts />
+  </DMT>
+</xml>
