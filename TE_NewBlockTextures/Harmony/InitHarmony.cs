@@ -53,12 +53,12 @@ namespace TormentedEmu_Mods_A19
 
         Array.Resize(ref __instance.meshes, 11);
         __instance.meshes[10] = newBlockTexMD;
+        MeshDescription.MESH_LENGTH = 11;
 
         sw.Stop();
         TELog.Out("Load new texture arrays complete.  Elapsed time: {0}", sw.Elapsed);
       }
     }
-
 
     [HarmonyPatch(typeof(MeshDescription))]
     [HarmonyPatch("LoadTextureArraysForQuality")]
@@ -75,7 +75,6 @@ namespace TormentedEmu_Mods_A19
         return true;
       }
     }
-
   }
 
   public static class TELog
