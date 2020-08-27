@@ -13,6 +13,7 @@ namespace TormentedEmu_Mods_A19
   /// </summary>
   public class TE_NewTerrainTextures : IHarmony
   {
+    // Change these settings to your preferences
     public static string MyModFolder = "TE_NewTerrainTextures";
     public static string MyUnityBundle = "NewTerrainTextures.unity3d";
     public static string MyUVMappingXml = "NewTerrainTexturesUVMapping.xml";
@@ -20,6 +21,18 @@ namespace TormentedEmu_Mods_A19
     public static string MyTextureArrayDiffuse = "ta_NewBlockTest";
     public static string MyTextureArrayNormal = "ta_NewBlockTest_n";
     public static string MyTextureArraySpecular = "ta_NewBlockTest_s";
+
+    public static bool MatchUVMappings = true; // true will change all vanilla and mod textures to the size provided by UVBlockSize
+    /*
+     * 1 = 100% sized texture per block
+     * 2 = 50%
+     * 4 = 25%
+     * 8 = ~10%
+     * 
+     * Most vanilla blocks are 8, with several being 4
+    */
+    public static int UVBlockSize = 1; // This will override the uvmapping xml settings
+
 
     public void Start()
     {
@@ -127,6 +140,11 @@ namespace TormentedEmu_Mods_A19
               int id = int.Parse(xmlElement2.GetAttribute("id"));
               UVRectTiling uvrectTiling = default(UVRectTiling);
               uvrectTiling.FromXML(xmlElement2);
+              if (MatchUVMappings)
+              {
+                uvrectTiling.blockH = UVBlockSize;
+                uvrectTiling.blockW = UVBlockSize;
+              }
               __instance.uvMapping[id] = uvrectTiling;
             }
           }
@@ -139,6 +157,11 @@ namespace TormentedEmu_Mods_A19
               int id = int.Parse(xmlElement2.GetAttribute("id"));
               UVRectTiling uvrectTiling = default(UVRectTiling);
               uvrectTiling.FromXML(xmlElement2);
+              if (MatchUVMappings)
+              {
+                uvrectTiling.blockH = UVBlockSize;
+                uvrectTiling.blockW = UVBlockSize;
+              }
               __instance.uvMapping[id] = uvrectTiling;
             }
           }
