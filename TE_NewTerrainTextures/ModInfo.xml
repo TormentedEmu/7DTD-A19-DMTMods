@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+  <ModInfo>
+    <Name value="TE_NewTerrainTextures" />
+    <Description value="Appends a set of new terrain textures(diff, norm, spec) to the game terrain textures array" />
+    <Author value="TormentedEmu" />
+    <Version value="A19 b180" />
+    <Website value="" />
+  </ModInfo>
+  <DMT>
+    <dependencies />
+    <conflicts />
+  </DMT>
+</xml>

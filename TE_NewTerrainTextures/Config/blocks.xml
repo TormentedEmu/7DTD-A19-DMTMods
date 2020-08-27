@@ -1,0 +1,277 @@
+<configs>
+	<append xpath="/blocks">
+    
+    <block name="TE_Blue_Ice_001">
+      <property name="Material" value="Mstone"/>
+      <property name="NoScrapping" value="true"/>
+      <property name="Shape" value="Terrain"/>
+      <property name="Mesh" value="terrain"/>
+      <property name="Texture" value="601"/>
+      <property name="ImposterExclude" value="true"/>
+      <property name="LPHardnessScale" value="2"/>
+      <property name="Weight" value="125"/>
+      <property name="Map.Color" value="100,100,200"/>
+      <property class="RepairItems">
+        <property name="resourceCobblestones" value="6"/>
+      </property>
+      <!-- <property name="HarvestOverdamage" value="true"/>  default=false; that was a super terrible idea. If a tool does 500 damage to a 100 HP block you get 5x the assigned harvest amount.  -->
+      <drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+      <!-- <drop event="Harvest" name="resourceScrapIron" count="10" tag="oreWoodHarvest"/> -->
+      <drop event="Destroy" count="0"/>
+      <drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+      <!-- <drop event="Fall" name="resourceScrapIron" count="20" prob="0.23" stick_chance="0"/> -->
+      <drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+      <!-- Better to have fewer stacks with higher numbers for performance reasons. -->
+      <!-- With a stick chance fallen resources just get buried and fall off the earth. -->
+      <!-- Could maybe do "0.1" stick but it would quickly make the whole endeavor unfun. -->
+      <property name="CanMobsSpawnOn" value="true"/>
+      <!-- BM and horde AI can ONLY spawn on these blocks, the minimum distance to any player is 30m -->
+      <property name="EconomicValue" value="5"/>
+      <property name="EconomicBundleSize" value="1"/>
+      <property name="SellableToTrader" value="false"/>
+      <property name="FilterTags" value="fterrain"/>
+      <property name="SortOrder1" value="d0j0"/>
+      <property name="SortOrder2" value="0050"/>
+      <property name="DisplayType" value="blockTerrain"/>
+    </block>
+
+    <block name="TE_Cracked_Mud_001">
+      <property name="Material" value="Mstone"/>
+      <property name="NoScrapping" value="true"/>
+      <property name="Shape" value="Terrain"/>
+      <property name="Mesh" value="terrain"/>
+      <property name="Texture" value="602"/>
+      <property name="ImposterExclude" value="true"/>
+      <property name="LPHardnessScale" value="2"/>
+      <property name="Weight" value="125"/>
+      <property name="Map.Color" value="100,100,200"/>
+      <property class="RepairItems">
+        <property name="resourceCobblestones" value="6"/>
+      </property>
+      <!-- <property name="HarvestOverdamage" value="true"/>  default=false; that was a super terrible idea. If a tool does 500 damage to a 100 HP block you get 5x the assigned harvest amount.  -->
+      <drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+      <!-- <drop event="Harvest" name="resourceScrapIron" count="10" tag="oreWoodHarvest"/> -->
+      <drop event="Destroy" count="0"/>
+      <drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+      <!-- <drop event="Fall" name="resourceScrapIron" count="20" prob="0.23" stick_chance="0"/> -->
+      <drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+      <!-- Better to have fewer stacks with higher numbers for performance reasons. -->
+      <!-- With a stick chance fallen resources just get buried and fall off the earth. -->
+      <!-- Could maybe do "0.1" stick but it would quickly make the whole endeavor unfun. -->
+      <property name="CanMobsSpawnOn" value="true"/>
+      <!-- BM and horde AI can ONLY spawn on these blocks, the minimum distance to any player is 30m -->
+      <property name="EconomicValue" value="5"/>
+      <property name="EconomicBundleSize" value="1"/>
+      <property name="SellableToTrader" value="false"/>
+      <property name="FilterTags" value="fterrain"/>
+      <property name="SortOrder1" value="d0j0"/>
+      <property name="SortOrder2" value="0050"/>
+      <property name="DisplayType" value="blockTerrain"/>
+    </block>
+
+    <block name="TE_Ground_wet_003">
+      <property name="Material" value="Mstone"/>
+      <property name="NoScrapping" value="true"/>
+      <property name="Shape" value="Terrain"/>
+      <property name="Mesh" value="terrain"/>
+      <property name="Texture" value="603"/>
+      <property name="ImposterExclude" value="true"/>
+      <property name="LPHardnessScale" value="2"/>
+      <property name="Weight" value="125"/>
+      <property name="Map.Color" value="100,100,200"/>
+      <property class="RepairItems">
+        <property name="resourceCobblestones" value="6"/>
+      </property>
+      <!-- <property name="HarvestOverdamage" value="true"/>  default=false; that was a super terrible idea. If a tool does 500 damage to a 100 HP block you get 5x the assigned harvest amount.  -->
+      <drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+      <!-- <drop event="Harvest" name="resourceScrapIron" count="10" tag="oreWoodHarvest"/> -->
+      <drop event="Destroy" count="0"/>
+      <drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+      <!-- <drop event="Fall" name="resourceScrapIron" count="20" prob="0.23" stick_chance="0"/> -->
+      <drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+      <!-- Better to have fewer stacks with higher numbers for performance reasons. -->
+      <!-- With a stick chance fallen resources just get buried and fall off the earth. -->
+      <!-- Could maybe do "0.1" stick but it would quickly make the whole endeavor unfun. -->
+      <property name="CanMobsSpawnOn" value="true"/>
+      <!-- BM and horde AI can ONLY spawn on these blocks, the minimum distance to any player is 30m -->
+      <property name="EconomicValue" value="5"/>
+      <property name="EconomicBundleSize" value="1"/>
+      <property name="SellableToTrader" value="false"/>
+      <property name="FilterTags" value="fterrain"/>
+      <property name="SortOrder1" value="d0j0"/>
+      <property name="SortOrder2" value="0050"/>
+      <property name="DisplayType" value="blockTerrain"/>
+    </block>
+
+    <block name="TE_Jungle_Floor_001">
+      <property name="Material" value="Mstone"/>
+      <property name="NoScrapping" value="true"/>
+      <property name="Shape" value="Terrain"/>
+      <property name="Mesh" value="terrain"/>
+      <property name="Texture" value="604"/>
+      <property name="ImposterExclude" value="true"/>
+      <property name="LPHardnessScale" value="2"/>
+      <property name="Weight" value="125"/>
+      <property name="Map.Color" value="100,100,200"/>
+      <property class="RepairItems">
+        <property name="resourceCobblestones" value="6"/>
+      </property>
+      <!-- <property name="HarvestOverdamage" value="true"/>  default=false; that was a super terrible idea. If a tool does 500 damage to a 100 HP block you get 5x the assigned harvest amount.  -->
+      <drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+      <!-- <drop event="Harvest" name="resourceScrapIron" count="10" tag="oreWoodHarvest"/> -->
+      <drop event="Destroy" count="0"/>
+      <drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+      <!-- <drop event="Fall" name="resourceScrapIron" count="20" prob="0.23" stick_chance="0"/> -->
+      <drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+      <!-- Better to have fewer stacks with higher numbers for performance reasons. -->
+      <!-- With a stick chance fallen resources just get buried and fall off the earth. -->
+      <!-- Could maybe do "0.1" stick but it would quickly make the whole endeavor unfun. -->
+      <property name="CanMobsSpawnOn" value="true"/>
+      <!-- BM and horde AI can ONLY spawn on these blocks, the minimum distance to any player is 30m -->
+      <property name="EconomicValue" value="5"/>
+      <property name="EconomicBundleSize" value="1"/>
+      <property name="SellableToTrader" value="false"/>
+      <property name="FilterTags" value="fterrain"/>
+      <property name="SortOrder1" value="d0j0"/>
+      <property name="SortOrder2" value="0050"/>
+      <property name="DisplayType" value="blockTerrain"/>
+    </block>
+
+    <block name="TE_Pebbles_007">
+      <property name="Material" value="Mstone"/>
+      <property name="NoScrapping" value="true"/>
+      <property name="Shape" value="Terrain"/>
+      <property name="Mesh" value="terrain"/>
+      <property name="Texture" value="605"/>
+      <property name="ImposterExclude" value="true"/>
+      <property name="LPHardnessScale" value="2"/>
+      <property name="Weight" value="125"/>
+      <property name="Map.Color" value="100,100,200"/>
+      <property class="RepairItems">
+        <property name="resourceCobblestones" value="6"/>
+      </property>
+      <!-- <property name="HarvestOverdamage" value="true"/>  default=false; that was a super terrible idea. If a tool does 500 damage to a 100 HP block you get 5x the assigned harvest amount.  -->
+      <drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+      <!-- <drop event="Harvest" name="resourceScrapIron" count="10" tag="oreWoodHarvest"/> -->
+      <drop event="Destroy" count="0"/>
+      <drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+      <!-- <drop event="Fall" name="resourceScrapIron" count="20" prob="0.23" stick_chance="0"/> -->
+      <drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+      <!-- Better to have fewer stacks with higher numbers for performance reasons. -->
+      <!-- With a stick chance fallen resources just get buried and fall off the earth. -->
+      <!-- Could maybe do "0.1" stick but it would quickly make the whole endeavor unfun. -->
+      <property name="CanMobsSpawnOn" value="true"/>
+      <!-- BM and horde AI can ONLY spawn on these blocks, the minimum distance to any player is 30m -->
+      <property name="EconomicValue" value="5"/>
+      <property name="EconomicBundleSize" value="1"/>
+      <property name="SellableToTrader" value="false"/>
+      <property name="FilterTags" value="fterrain"/>
+      <property name="SortOrder1" value="d0j0"/>
+      <property name="SortOrder2" value="0050"/>
+      <property name="DisplayType" value="blockTerrain"/>
+    </block>
+
+    <block name="TE_Sand 002">
+      <property name="Material" value="Mstone"/>
+      <property name="NoScrapping" value="true"/>
+      <property name="Shape" value="Terrain"/>
+      <property name="Mesh" value="terrain"/>
+      <property name="Texture" value="606"/>
+      <property name="ImposterExclude" value="true"/>
+      <property name="LPHardnessScale" value="2"/>
+      <property name="Weight" value="125"/>
+      <property name="Map.Color" value="100,100,200"/>
+      <property class="RepairItems">
+        <property name="resourceCobblestones" value="6"/>
+      </property>
+      <!-- <property name="HarvestOverdamage" value="true"/>  default=false; that was a super terrible idea. If a tool does 500 damage to a 100 HP block you get 5x the assigned harvest amount.  -->
+      <drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+      <!-- <drop event="Harvest" name="resourceScrapIron" count="10" tag="oreWoodHarvest"/> -->
+      <drop event="Destroy" count="0"/>
+      <drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+      <!-- <drop event="Fall" name="resourceScrapIron" count="20" prob="0.23" stick_chance="0"/> -->
+      <drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+      <!-- Better to have fewer stacks with higher numbers for performance reasons. -->
+      <!-- With a stick chance fallen resources just get buried and fall off the earth. -->
+      <!-- Could maybe do "0.1" stick but it would quickly make the whole endeavor unfun. -->
+      <property name="CanMobsSpawnOn" value="true"/>
+      <!-- BM and horde AI can ONLY spawn on these blocks, the minimum distance to any player is 30m -->
+      <property name="EconomicValue" value="5"/>
+      <property name="EconomicBundleSize" value="1"/>
+      <property name="SellableToTrader" value="false"/>
+      <property name="FilterTags" value="fterrain"/>
+      <property name="SortOrder1" value="d0j0"/>
+      <property name="SortOrder2" value="0050"/>
+      <property name="DisplayType" value="blockTerrain"/>
+    </block>
+
+    <block name="TE_Stone_Floor_002">
+      <property name="Material" value="Mstone"/>
+      <property name="NoScrapping" value="true"/>
+      <property name="Shape" value="Terrain"/>
+      <property name="Mesh" value="terrain"/>
+      <property name="Texture" value="607"/>
+      <property name="ImposterExclude" value="true"/>
+      <property name="LPHardnessScale" value="2"/>
+      <property name="Weight" value="125"/>
+      <property name="Map.Color" value="100,100,200"/>
+      <property class="RepairItems">
+        <property name="resourceCobblestones" value="6"/>
+      </property>
+      <!-- <property name="HarvestOverdamage" value="true"/>  default=false; that was a super terrible idea. If a tool does 500 damage to a 100 HP block you get 5x the assigned harvest amount.  -->
+      <drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+      <!-- <drop event="Harvest" name="resourceScrapIron" count="10" tag="oreWoodHarvest"/> -->
+      <drop event="Destroy" count="0"/>
+      <drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+      <!-- <drop event="Fall" name="resourceScrapIron" count="20" prob="0.23" stick_chance="0"/> -->
+      <drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+      <!-- Better to have fewer stacks with higher numbers for performance reasons. -->
+      <!-- With a stick chance fallen resources just get buried and fall off the earth. -->
+      <!-- Could maybe do "0.1" stick but it would quickly make the whole endeavor unfun. -->
+      <property name="CanMobsSpawnOn" value="true"/>
+      <!-- BM and horde AI can ONLY spawn on these blocks, the minimum distance to any player is 30m -->
+      <property name="EconomicValue" value="5"/>
+      <property name="EconomicBundleSize" value="1"/>
+      <property name="SellableToTrader" value="false"/>
+      <property name="FilterTags" value="fterrain"/>
+      <property name="SortOrder1" value="d0j0"/>
+      <property name="SortOrder2" value="0050"/>
+      <property name="DisplayType" value="blockTerrain"/>
+    </block>
+
+    <block name="TE_Stone_Path_004">
+      <property name="Material" value="Mstone"/>
+      <property name="NoScrapping" value="true"/>
+      <property name="Shape" value="Terrain"/>
+      <property name="Mesh" value="terrain"/>
+      <property name="Texture" value="608"/>
+      <property name="ImposterExclude" value="true"/>
+      <property name="LPHardnessScale" value="2"/>
+      <property name="Weight" value="125"/>
+      <property name="Map.Color" value="100,100,200"/>
+      <property class="RepairItems">
+        <property name="resourceCobblestones" value="6"/>
+      </property>
+      <!-- <property name="HarvestOverdamage" value="true"/>  default=false; that was a super terrible idea. If a tool does 500 damage to a 100 HP block you get 5x the assigned harvest amount.  -->
+      <drop event="Harvest" name="resourceRockSmall" count="55" tag="oreWoodHarvest"/>
+      <!-- <drop event="Harvest" name="resourceScrapIron" count="10" tag="oreWoodHarvest"/> -->
+      <drop event="Destroy" count="0"/>
+      <drop event="Fall" name="resourceRockSmall" count="44" prob="0.23" stick_chance="0"/>
+      <!-- <drop event="Fall" name="resourceScrapIron" count="20" prob="0.23" stick_chance="0"/> -->
+      <drop event="Fall" name="terrDestroyedStone" count="1" prob="0.1" stick_chance="0.5"/>
+      <!-- Better to have fewer stacks with higher numbers for performance reasons. -->
+      <!-- With a stick chance fallen resources just get buried and fall off the earth. -->
+      <!-- Could maybe do "0.1" stick but it would quickly make the whole endeavor unfun. -->
+      <property name="CanMobsSpawnOn" value="true"/>
+      <!-- BM and horde AI can ONLY spawn on these blocks, the minimum distance to any player is 30m -->
+      <property name="EconomicValue" value="5"/>
+      <property name="EconomicBundleSize" value="1"/>
+      <property name="SellableToTrader" value="false"/>
+      <property name="FilterTags" value="fterrain"/>
+      <property name="SortOrder1" value="d0j0"/>
+      <property name="SortOrder2" value="0050"/>
+      <property name="DisplayType" value="blockTerrain"/>
+    </block>
+
+  </append>
+</configs>

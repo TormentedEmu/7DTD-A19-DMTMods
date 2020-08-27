@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<uvmapping>
+
+    <uv  id="601" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3882353,0.3372549,0.3294118" globaluv="True" index="0" material="stone" texture="Blue_Ice_001.jpg" />
+    <uv  id="602" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3764706,0.372549,0.3294118" globaluv="True" index="0" material="dirt" texture="Cracked_Mud_001.jpg" />
+    <uv  id="603" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.2980392,0.1882353,0.1372549" globaluv="True" index="0" material="dirt" texture="Ground_wet_003.jpg" />
+    <uv  id="604" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.4078431,0.3803922,0.3294118" globaluv="True" index="0" material="dirt" texture="Jungle_Floor_001.jpg" />
+    <uv  id="605" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.4392157,0.427451,0.3960784" globaluv="True" index="0" material="stone" texture="Pebbles_007.jpg" />
+    <uv  id="606" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3215686,0.1411765,0.1372549" globaluv="True" index="0" material="dirt" texture="Sand 002.jpg" />
+    <uv  id="607" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3647059,0.3333333,0.2784314" globaluv="True" index="0" material="stone" texture="Stone_Floor_002.jpg" />
+    <uv  id="608" x="34" y="34" w="239" h="239" blockw="4" blockh="4" color="0.3098039,0.3058824,0.2588235" globaluv="True" index="0" material="stone" texture="Stone_Path_004.jpg" />
+    
+</uvmapping>
