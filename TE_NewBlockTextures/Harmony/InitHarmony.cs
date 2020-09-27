@@ -26,9 +26,7 @@ namespace TormentedEmu_Mods_A19
       harmony.PatchAll(Assembly.GetExecutingAssembly());
     }
 
-    [HarmonyPatch(typeof(MeshDescriptionCollection))]
-    [HarmonyPatch("LoadTextureArraysForQuality")]
-    [HarmonyPatch(new Type[] { typeof(bool) })]
+    [HarmonyPatch(typeof(MeshDescriptionCollection), "LoadTextureArraysForQuality", new Type[] { typeof(bool) })]
     public class MDCLoadTex
     {
       public static void Postfix(ref MeshDescriptionCollection __instance)
@@ -56,32 +54,23 @@ namespace TormentedEmu_Mods_A19
         MeshDescription.MESH_LENGTH = 11;
 
         sw.Stop();
-        TELog.Out("Load new texture arrays complete.  Elapsed time: {0}", sw.Elapsed);
+        Log.Out("Load new texture arrays complete.  Elapsed time: {0}", sw.Elapsed);
       }
     }
 
-    [HarmonyPatch(typeof(MeshDescription))]
-    [HarmonyPatch("LoadTextureArraysForQuality")]
+    [HarmonyPatch(typeof(MeshDescription), "LoadTextureArraysForQuality")]
     public class MeshDescription_LoadTextureArraysForQuality
     {
       public static bool Prefix(ref MeshDescription __instance, MeshDescriptionCollection _meshDescriptionCollection, int _index, int _quality, bool _isReload = false)
       {
         if (_index > MeshDescription.MESH_OPAQUE2)
         {
-          TELog.Out("_index > MESH_OPAQUE2(9) so let's not load/reload.  Skipping LoadTextureArraysForQuality for index {0}", _index);
+          Log.Out("_index > MESH_OPAQUE2(9) so let's not load/reload.  Skipping LoadTextureArraysForQuality for index {0}", _index);
           return false;
         }
 
         return true;
       }
-    }
-  }
-
-  public static class TELog
-  {
-    public static void Out(string format, params object[] args)
-    {
-      Logging.Log(string.Format(format, args));
     }
   }
 }
