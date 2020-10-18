@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+  <ModInfo>
+    <Name value="TE_ObjectManipulator" />
+    <Description value="Adds controls to allow the modification of the player's component transform position and scale" />
+    <Author value="TormentedEmu" />
+    <Version value="A19.1 b8" />
+    <Website value="" />
+  </ModInfo>
+  <DMT>
+    <dependencies />
+    <conflicts />
+  </DMT>
+</xml>

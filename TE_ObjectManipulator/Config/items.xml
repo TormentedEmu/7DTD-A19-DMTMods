@@ -1,0 +1,61 @@
+<configs>
+  <append xpath="/items">
+
+    <item name="TE_ObjectManipulatorHandgun">
+      <property name="CreativeMode" value="Dev"/>
+      <property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,shortRange,pistol,barrelAttachments,sideAttachments,smallTopAttachments,magazine,firingMode,attAgility,perkGunslinger,9mmGun,admin,noMods"/>
+      <property name="DisplayType" value="adminRanged"/>
+      <property name="HoldType" value="1"/>
+      <property name="Meshfile" value="#Other/Items?Weapons/Ranged/Pistol/PistolPrefab.prefab"/>
+      <Property name="TintColor" value="10,0,210"/>
+      <property name="CustomIcon" value="gunHandgunT1Pistol"/>
+      <property name="CustomIconTint" value="20,0,200"/>
+      <property name="ItemTypeIcon" value="computer"/>
+      <property name="Material" value="Morganic"/>
+      <property name="Stacknumber" value="1"/>
+      <property name="DegradationBreaksAfter" value="true"/>
+      <property name="SoundJammed" value="weapon_jam"/>
+      <property name="CrosshairUpAfterShot" value="true"/>
+      <property name="CrosshairOnAim" value="true"/>
+      <property name="ShowQuality" value="false"/>
+      <property class="Action0">
+        <property name="Class" value="_TE_ObjectManipulator, Mods"/>
+        <property name="Magazine_items" value="ammo9mmBulletBall"/>
+        <property name="Sound_start" value="mp5_s_fire"/>
+        <property name="Sound_repeat" value=""/>
+        <property name="Sound_end" value=""/>
+        <property name="Sound_empty" value="dryfire"/>
+        <property name="Sound_reload" value="pistol_reload"/>
+        <property name="Particles_muzzle_fire" value="gunfire_pistol"/>
+        <property name="Particles_muzzle_fire_fpv" value="gunfire_pistol_fpv"/>
+        <property name="Single_magazine_usage" value="true"/>
+        <property name="Infinite_ammo" value="true"/>
+      </property>
+      
+      <effect_group name="TE_ObjectManipulatorHandgun" tiered="false">
+        <passive_effect name="MaxRange" operation="base_set" value="200"/>
+        <passive_effect name="DamageFalloffRange" operation="base_set" value="200"/>
+        <passive_effect name="RoundsPerMinute" operation="base_set" value="450"/>
+        <passive_effect name="RoundRayCount" operation="base_set" value="8"/>
+        <passive_effect name="BurstRoundCount" operation="base_set" value="1000"/>
+        <passive_effect name="EntityDamage" operation="base_set" value="5000"/>
+        <passive_effect name="BlockDamage" operation="base_set" value="0"/>
+
+        <passive_effect name="KickDegreesVerticalMin" operation="base_set" value="0"/>
+        <passive_effect name="KickDegreesVerticalMax" operation="base_set" value="0"/>
+        <passive_effect name="KickDegreesHorizontalMin" operation="base_set" value="0"/>
+        <passive_effect name="KickDegreesHorizontalMax" operation="base_set" value="0"/>
+
+        <passive_effect name="SpreadDegreesVertical" operation="base_set" value="2.6"/>
+        <passive_effect name="SpreadDegreesHorizontal" operation="base_set" value="2.6"/>
+        <passive_effect name="SpreadMultiplierAiming" operation="base_set" value=".05"/>
+        <passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="2"/>
+        <passive_effect name="WeaponHandling" operation="base_set" value="1.2"/>
+        <passive_effect name="DegradationMax" operation="base_set" value="9999" tags="admin"/>
+        <passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="admin"/>
+        <passive_effect name="ModSlots" operation="base_set" value="0"/>
+      </effect_group>
+    </item>
+
+  </append>
+</configs>
