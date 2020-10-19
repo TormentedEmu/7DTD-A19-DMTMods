@@ -45,7 +45,7 @@ public class TE_ObjectManipulator : MonoBehaviour
     _Player = _EntityAlive as EntityPlayerLocal;
     _currentTarget = _EntityAlive.transform;
     if (_Cube == null)
-      _Cube = EmuUtility.AddPrimitive(_currentTarget.transform, PrimitiveType.Cube, 0.2f, Color.blue);
+      _Cube = AddPrimitive(PrimitiveType.Cube, 0.2f, Color.blue);
     _Cube.transform.parent = _currentTarget;
     _Cube.transform.position = _currentTarget.position;
     var playerRagdoll = _currentTarget.FindInChilds("player_" + (_EntityAlive.IsMale ? "male" : "female") + "Ragdoll", false);
@@ -344,5 +344,20 @@ public class TE_ObjectManipulator : MonoBehaviour
     ScaleY,
     ScaleZ,
     ScaleAll,
+  }
+
+
+  public static GameObject AddPrimitive(PrimitiveType primitiveType, float scale, Color color)
+  {
+    GameObject prim = GameObject.CreatePrimitive(primitiveType);
+    Object.Destroy(prim.transform.GetComponent<Collider>());
+    prim.layer = 0;
+    var renderer = prim.GetComponent<Renderer>();
+    renderer.material = Resources.Load<Material>("Materials/TerrainSmoothing");
+    color.a = 0.2f;
+    renderer.material.color = color;
+    prim.transform.localPosition = Vector3.zero;
+    prim.transform.localScale = Vector3.one * scale;
+    return prim;
   }
 }
