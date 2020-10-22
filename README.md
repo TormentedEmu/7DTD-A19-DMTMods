@@ -1,5 +1,5 @@
 # 7DTD-A19-DMTMods
-A collection of DMT mods for 7 Days to Die Alpha 19
+A collection of DMT mods for 7 Days to Die Alpha 19 - All are tested and working on A19.2 b4
 
 I used the latest release of DMT(currently v2.1) which can be found here: https://github.com/HAL-NINE-THOUSAND/DMT/releases
 
