@@ -75,7 +75,8 @@ public class TE_ObjectManipulator : MonoBehaviour
     {
       _CursorEnabled = !_CursorEnabled;
       GameManager.Instance.SetCursorEnabledOverride(_CursorEnabled, _CursorEnabled);
-      _Player.SetControllable(!_CursorEnabled);      
+      _Player.SetControllable(!_CursorEnabled);
+      _Player.playerInput.Enabled = !_CursorEnabled;
     }
 
     if (_CursorEnabled && Cursor.visible == false)

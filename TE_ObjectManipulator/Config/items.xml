@@ -7,7 +7,7 @@
       <property name="DisplayType" value="adminRanged"/>
       <property name="HoldType" value="1"/>
       <property name="Meshfile" value="#Other/Items?Weapons/Ranged/Pistol/PistolPrefab.prefab"/>
-      <Property name="TintColor" value="10,0,210"/>
+      <property name="TintColor" value="10,0,210"/>
       <property name="CustomIcon" value="gunHandgunT1Pistol"/>
       <property name="CustomIconTint" value="20,0,200"/>
       <property name="ItemTypeIcon" value="computer"/>
