@@ -7,22 +7,33 @@ using UnityEngine;
 public class ItemAction_TE_ObjectManipulator : ItemActionAttack
 {
   TE_ObjectManipulator _ObjectManipulator;
+  GameObject _TargetSphere;
 
-	public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
+  public void Init()
+  {
+    if (_ObjectManipulator == null)
+    {
+      _ObjectManipulator = new GameObject("TE_ObjectManipulator", typeof(TE_ObjectManipulator)).GetComponent<TE_ObjectManipulator>();
+    }
+
+    _ObjectManipulator.gameObject.SetActive(false);
+
+    if (_TargetSphere == null)
+    {
+      _TargetSphere = TE_ObjectManipulator.AddPrimitive(PrimitiveType.Sphere, 0.3f, Color.red);
+      _TargetSphere.SetActive(false);
+    }
+  }
+
+  public override ItemActionData CreateModifierData(ItemInventoryData _invData, int _indexInEntityOfAction)
 	{
 		return new ItemActionRanged.ItemActionDataRanged(_invData, _indexInEntityOfAction);
 	}
 
   public override void StartHolding(ItemActionData _data)
   {
-    EntityAlive holdingEntity = _data.invData.holdingEntity;
-    if (_ObjectManipulator == null)
-    {
-      _ObjectManipulator = new GameObject("TE_ObjectManipulator", typeof(TE_ObjectManipulator)).GetComponent<TE_ObjectManipulator>();
-    }
+    _ObjectManipulator.Init(_data.invData.holdingEntity);
 
-    _ObjectManipulator.gameObject.SetActive(true);
-    _ObjectManipulator.Init(holdingEntity);
     base.StartHolding(_data);
   }
 
@@ -81,7 +92,7 @@ public class ItemAction_TE_ObjectManipulator : ItemActionAttack
 
 	public override ItemClass.EnumCrosshairType GetCrosshairType(ItemActionData _actionData)
 	{
-		return ItemClass.EnumCrosshairType.None;
+		return ItemClass.EnumCrosshairType.Crosshair;
 	}
 
 	public override RenderCubeType GetFocusType(ItemActionData _actionData)
@@ -233,7 +244,9 @@ public class ItemAction_TE_ObjectManipulator : ItemActionAttack
 		}
 		itemActionDataRanged.bReleased = true;
 		itemActionDataRanged.lastAccuracy = 1f;
-	}
+
+    _TargetSphere.SetActive(false);
+  }
 
 	public override bool IsActionRunning(ItemActionData _actionData)
 	{
@@ -402,13 +415,22 @@ public class ItemAction_TE_ObjectManipulator : ItemActionAttack
 		{
 			itemActionDataRanged.Laser = ItemActionRanged.ItemActionDataRanged.getModelChildTransformByName(_actionData.invData, "laser");
 		}
-		if (ItemAction.ShowDistanceDebugInfo || (_actionData as ItemActionRanged.ItemActionDataRanged).Laser != null)
-		{
-			this.GetExecuteActionTarget(_actionData);
-		}
-	}
 
-	public override void CancelReload(ItemActionData _data)
+    var hitTarget = GetExecuteActionTarget(_actionData);
+    if (hitTarget != null && hitTarget.transform != null)
+    {
+      _TargetSphere.transform.parent = hitTarget.transform;
+      _TargetSphere.transform.position = hitTarget.transform.position;
+      _TargetSphere.transform.localPosition = hitTarget.transform.localPosition;
+      _TargetSphere.SetActive(true);
+    }
+    else
+    {
+      _TargetSphere.SetActive(false);
+    }
+  }
+
+  public override void CancelReload(ItemActionData _data)
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = (ItemActionRanged.ItemActionDataRanged)_data;
 		if (!itemActionDataRanged.isReloading || itemActionDataRanged.isReloadCancelled)
@@ -688,13 +710,8 @@ public class ItemAction_TE_ObjectManipulator : ItemActionAttack
     //for (int i = 0; i < num; i++)
     //{
     //shotDirection = this.fireShot(i, itemActionDataRanged);
-    //shotDirection = this.fireShot(0, itemActionDataRanged);
+    shotDirection = FireShot(0, itemActionDataRanged);
     //}
-
-    if (_ObjectManipulator != null && itemActionDataRanged.indexInEntityOfAction == 0)
-    {
-          _ObjectManipulator.ToggleActive(!_ObjectManipulator.gameObject.activeSelf);
-    }
 
     holdingEntity.SetModelLayer(modelLayer, false);
 		Vector3 startPos;
@@ -719,10 +736,17 @@ public class ItemAction_TE_ObjectManipulator : ItemActionAttack
 		holdingEntity.inventory.CallOnToolbeltChangedInternal();
 	}
 
-  protected virtual Vector3 fireShot(int _shotIdx, ItemActionRanged.ItemActionDataRanged _actionData)
+  public void ToggleActive(ItemActionData data)
+  {
+    //EntityAlive holdingEntity = _data.invData.holdingEntity;
+    //_ObjectManipulator.Init(holdingEntity);
+    _ObjectManipulator.ToggleActive(!_ObjectManipulator.gameObject.activeSelf);
+  }
+
+  protected Vector3 FireShot(int _shotIdx, ItemActionRanged.ItemActionDataRanged _actionData)
   {
     EntityAlive holdingEntity = _actionData.invData.holdingEntity;
-    float range = this.GetRange(_actionData);
+    float range = 10f; // this.GetRange(_actionData);
     Ray lookRay = holdingEntity.GetLookRay();
     //lookRay.direction = this.getDirectionOffset(_actionData, lookRay.direction, _shotIdx);
     int hitMask = (this.hitmaskOverride == 0) ? 8 : this.hitmaskOverride;
@@ -750,7 +774,7 @@ public class ItemAction_TE_ObjectManipulator : ItemActionAttack
           {
             lookRay.origin = worldRayHitInfo.hit.pos + lookRay.direction * 0.1f;
             i--;
-            goto IL_3AD;
+            continue;
           }
           holdingEntity.MinEventContext.Other = entityAlive;
           x = entityAlive;
@@ -770,18 +794,20 @@ public class ItemAction_TE_ObjectManipulator : ItemActionAttack
         _actionData.attackDetails.isCriticalHit = holdingEntity.AimingGun;
         _actionData.attackDetails.WeaponTypeTag = ItemActionAttack.RangedTag;
         _actionData.invData.holdingEntity.FireEvent((_actionData.indexInEntityOfAction == 0) ? MinEventTypes.onSelfPrimaryActionRayHit : MinEventTypes.onSelfSecondaryActionRayHit, true);
-        ItemActionAttack.Hit(_actionData.invData.world, worldRayHitInfo, holdingEntity.entityId, (this.DamageType == EnumDamageTypes.None) ? EnumDamageTypes.Piercing : this.DamageType, base.GetDamageBlock(_actionData.invData.itemValue, ItemActionAttack.GetBlockHit(_actionData.invData.world, worldRayHitInfo), holdingEntity, 0) * num3, base.GetDamageEntity(_actionData.invData.itemValue, holdingEntity, 0) * num3, 1f, _actionData.invData.itemValue.PercentUsesLeft, _actionData.invData.item.CritChance.Value, ItemAction.GetDismemberChance(_actionData, worldRayHitInfo), 0f, this.bulletMaterialName, this.damageMultiplier, this.getBuffActions(_actionData), _actionData.attackDetails, this.ActionExp, this.ActionExpBonusMultiplier, null, this.ToolBonuses, this.bSupportHarvesting ? ItemActionAttack.EnumAttackMode.RealAndHarvesting : ItemActionAttack.EnumAttackMode.RealNoHarvesting, false, false, false, null, -1, null);
-        if (this.bSupportHarvesting)
+        if (worldRayHitInfo.transform != null)
         {
-          GameUtils.HarvestOnAttack(_actionData, this.ToolBonuses);
+          _ObjectManipulator.CurrentTarget = worldRayHitInfo.transform;
         }
+        //ItemActionAttack.Hit(_actionData.invData.world, worldRayHitInfo, holdingEntity.entityId, (this.DamageType == EnumDamageTypes.None) ? EnumDamageTypes.Piercing : this.DamageType, base.GetDamageBlock(_actionData.invData.itemValue, ItemActionAttack.GetBlockHit(_actionData.invData.world, worldRayHitInfo), holdingEntity, 0) * num3, base.GetDamageEntity(_actionData.invData.itemValue, holdingEntity, 0) * num3, 1f, _actionData.invData.itemValue.PercentUsesLeft, _actionData.invData.item.CritChance.Value, ItemAction.GetDismemberChance(_actionData, worldRayHitInfo), 0f, this.bulletMaterialName, this.damageMultiplier, this.getBuffActions(_actionData), _actionData.attackDetails, this.ActionExp, this.ActionExpBonusMultiplier, null, this.ToolBonuses, this.bSupportHarvesting ? ItemActionAttack.EnumAttackMode.RealAndHarvesting : ItemActionAttack.EnumAttackMode.RealNoHarvesting, false, false, false, null, -1, null);
+        //if (this.bSupportHarvesting)
+        //{
+          //GameUtils.HarvestOnAttack(_actionData, this.ToolBonuses);
+        //}
       }
       else
       {
         _actionData.invData.holdingEntity.FireEvent((_actionData.indexInEntityOfAction == 0) ? MinEventTypes.onSelfPrimaryActionRayMiss : MinEventTypes.onSelfSecondaryActionRayMiss, true);
       }
-
-    IL_3AD:;
     }
 
     return lookRay.direction;
@@ -838,7 +864,7 @@ public class ItemAction_TE_ObjectManipulator : ItemActionAttack
 		return (int)EffectManager.GetValue(PassiveEffects.BurstRoundCount, _actionData.invData.itemValue, 1f, _actionData.invData.holdingEntity, null, default(FastTags), true, true, true, true, 1, true);
 	}
 
-	protected virtual Vector3 getDirectionOffset(ItemActionRanged.ItemActionDataRanged _actionData, Vector3 _forward, int _shotOffset = 0)
+	protected Vector3 getDirectionOffset(ItemActionRanged.ItemActionDataRanged _actionData, Vector3 _forward, int _shotOffset = 0)
 	{
 		float num = EffectManager.GetValue(PassiveEffects.SpreadDegreesHorizontal, _actionData.invData.itemValue, 45f, _actionData.invData.holdingEntity, null, default(FastTags), true, true, true, true, 1, true);
 		num *= _actionData.lastAccuracy;
@@ -885,34 +911,24 @@ public class ItemAction_TE_ObjectManipulator : ItemActionAttack
 	{
 		ItemActionRanged.ItemActionDataRanged itemActionDataRanged = (ItemActionRanged.ItemActionDataRanged)_actionData;
 		Ray lookRay = _actionData.invData.holdingEntity.GetLookRay();
-		lookRay.direction = this.getDirectionOffset(itemActionDataRanged, lookRay.direction, 0);
-		float range = this.GetRange(_actionData);
+    //lookRay.direction = getDirectionOffset(itemActionDataRanged, lookRay.direction, 0);
+    float range = 10f; // GetRange(_actionData);
 		itemActionDataRanged.distance = range;
 		int modelLayer = _actionData.invData.holdingEntity.GetModelLayer();
 		_actionData.invData.holdingEntity.SetModelLayer(2, false);
-		int hitMask = (this.hitmaskOverride == 0) ? 8 : this.hitmaskOverride;
+		int hitMask = (hitmaskOverride == 0) ? 8 : hitmaskOverride;
 		bool flag = Voxel.Raycast(_actionData.invData.world, lookRay, range, -538750997, hitMask, 0f);
 		_actionData.invData.holdingEntity.SetModelLayer(modelLayer, false);
+
 		if (flag)
 		{
 			WorldRayHitInfo updatedHitInfo = _actionData.GetUpdatedHitInfo();
 			itemActionDataRanged.distance = Mathf.Sqrt(updatedHitInfo.hit.distanceSq);
 			itemActionDataRanged.damageFalloffPercent = 1f;
-			if (itemActionDataRanged.Laser != null)
-			{
-				itemActionDataRanged.Laser.position = updatedHitInfo.hit.pos - Origin.position;
-			}
-			float value = EffectManager.GetValue(PassiveEffects.DamageFalloffRange, _actionData.invData.itemValue, range, _actionData.invData.holdingEntity, null, default(FastTags), true, true, true, true, 1, true);
-			if (updatedHitInfo.hit.distanceSq > value * value)
-			{
-				itemActionDataRanged.damageFalloffPercent = 1f - (updatedHitInfo.hit.distanceSq - value * value) / (range * range - value * value);
-			}
+
 			return updatedHitInfo;
 		}
-		if (itemActionDataRanged.Laser != null)
-		{
-			itemActionDataRanged.Laser.position = new Vector3(lookRay.origin.x, lookRay.origin.y, lookRay.origin.z + itemActionDataRanged.distance);
-		}
+
 		return null;
 	}
 

@@ -2,6 +2,7 @@
   <append xpath="/items">
 
     <item name="TE_ObjectManipulatorHandgun">
+      <property name="Class" value="TE_ObjectManipulatorItem, Mods"/>
       <property name="CreativeMode" value="Dev"/>
       <property name="Tags" value="weapon,ranged,holdBreathAiming,reloadPenalty,gun,shortRange,pistol,barrelAttachments,sideAttachments,smallTopAttachments,magazine,firingMode,attAgility,perkGunslinger,9mmGun,admin,noMods"/>
       <property name="DisplayType" value="adminRanged"/>

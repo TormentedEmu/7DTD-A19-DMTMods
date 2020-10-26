@@ -36,21 +36,45 @@ public class TE_ObjectManipulator : MonoBehaviour
     set
     {
       _currentTarget = value;
+      var rootEntityT = RootTransformRefEntity.FindEntityUpwards(_currentTarget);
+      if (rootEntityT != null)
+      {
+        foreach (var c in rootEntityT.GetComponentsInChildren<Component>())
+        {
+          if (c is Animator)
+          {
+            _Animator = c as Animator;
+            break;
+          }
+        }
+      }
+      UpdatePrimitive();
     }
   }
 
   public void Init(EntityAlive entityAlive)
   {
     _EntityAlive = entityAlive;
-    _Player = _EntityAlive as EntityPlayerLocal;
-    _currentTarget = _EntityAlive.transform;
+
+    if (_currentTarget == null)
+    {
+      _currentTarget = _EntityAlive.transform;
+    }
+
+    if (_Player == null && GameManager.Instance.World != null)
+    {
+      _Player = GameManager.Instance.World.GetPrimaryPlayer();
+      var playerRagdoll = _currentTarget.FindInChilds("player_" + (_Player.IsMale ? "male" : "female") + "Ragdoll", false);
+      _Animator = playerRagdoll.GetComponent<Animator>();
+      _AvatarLocalPlayerController = _currentTarget.GetComponent<AvatarLocalPlayerController>();
+    }
+
     if (_Cube == null)
+    {
       _Cube = AddPrimitive(PrimitiveType.Cube, 0.2f, Color.blue);
-    _Cube.transform.parent = _currentTarget;
-    _Cube.transform.position = _currentTarget.position;
-    var playerRagdoll = _currentTarget.FindInChilds("player_" + (_EntityAlive.IsMale ? "male" : "female") + "Ragdoll", false);
-    _Animator = playerRagdoll.GetComponent<Animator>();
-    _AvatarLocalPlayerController = _currentTarget.GetComponent<AvatarLocalPlayerController>();
+      _Cube.transform.parent = _currentTarget;
+      _Cube.transform.position = _currentTarget.position;
+    }
   }
 
   public void ToggleActive(bool active)
@@ -137,6 +161,14 @@ public class TE_ObjectManipulator : MonoBehaviour
       if (GUI.Button(new Rect(220, 190, 80, 25), "Primitive"))
       {
         _Cube.SetActive(!_Cube.activeSelf);
+        GUI.changed = false;
+      }
+
+      if (GUI.Button(new Rect(310, 190, 80, 25), "Animator"))
+      {
+        if (_Animator != null)
+          _Animator.enabled = !_Animator.enabled;
+
         GUI.changed = false;
       }
 
@@ -330,6 +362,7 @@ public class TE_ObjectManipulator : MonoBehaviour
       _Cube.transform.localPosition = _currentTarget.localPosition;
       _Cube.transform.rotation = _currentTarget.rotation;
       _Cube.transform.localRotation = _currentTarget.localRotation;
+      _Cube.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
     }
   }
 
