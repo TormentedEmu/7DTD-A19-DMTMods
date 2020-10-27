@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+  <ModInfo>
+    <Name value="TE_MenuMusic" />
+    <Description value="Allows you to change the menu background music at the start of the game without needing to patch the resources.assets file." />
+    <Author value="TormentedEmu" />
+    <Version value="1" />
+    <Website value="" />
+  </ModInfo>
+  <DMT>
+    <dependencies />
+    <conflicts />
+  </DMT>
+</xml>
