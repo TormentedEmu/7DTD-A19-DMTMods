@@ -34,6 +34,7 @@ namespace TormentedEmu_Mods_A19
         System.Diagnostics.Stopwatch sw = System.Diagnostics.Stopwatch.StartNew();
 
         string myResourcesPath = Path.Combine(Utils.GetGamePath(), "Mods", MyModFolder, "Resources");
+        string myConfigPath = Path.Combine(Utils.GetGamePath(), "Mods", MyModFolder, "Config");
         string myBundlePath = Path.Combine(myResourcesPath, MyUnityBundle);
 
         MeshDescription newBlockTexMD = new MeshDescription(__instance.meshes[0]);
@@ -41,7 +42,7 @@ namespace TormentedEmu_Mods_A19
         newBlockTexMD.ShaderName = __instance.meshes[0].ShaderName;
         newBlockTexMD.SecondaryShader = __instance.meshes[0].SecondaryShader;
         newBlockTexMD.bTextureArray = true;
-        newBlockTexMD.MetaData = new TextAsset(File.ReadAllText(Path.Combine(myResourcesPath, MyUVMappingXml)));
+        newBlockTexMD.MetaData = new TextAsset(File.ReadAllText(Path.Combine(myConfigPath, MyUVMappingXml)));
 
         AssetBundleManager.Instance.LoadAssetBundle(myBundlePath, false);
 

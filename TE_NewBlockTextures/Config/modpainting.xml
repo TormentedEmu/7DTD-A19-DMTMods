@@ -1,0 +1,58 @@
+<modpaints>
+
+  <modpaint id="0" name="Delete / Unused">
+    <property name="TextureId" value="0" />
+    <property name="Group" value="txGroupExcluded" />
+    <property name="Hidden" value="true" /> <!-- This flag does nothing in creative mode / editor. All paint IDs will show. -->
+  </modpaint>
+
+  <modpaint id="1" name="Wood GateFortified 01">
+    <property name="TextureId" value="1"/>
+    <property name="Group" value="txGroupWallCovering"/>
+    <property name="PaintCost" value="1" />
+  </modpaint>
+
+  <modpaint id="2" name="Wood Door 02">
+    <property name="TextureId" value="2"/>
+    <property name="Group" value="txGroupWallCovering"/>
+    <property name="PaintCost" value="1" />
+  </modpaint>
+
+  <modpaint id="3" name="Wood GateFortified 03">
+    <property name="TextureId" value="3"/>
+    <property name="Group" value="txGroupWallCovering"/>
+    <property name="PaintCost" value="1" />
+  </modpaint>
+
+  <modpaint id="4" name="Stone Wall">
+    <property name="TextureId" value="4"/>
+    <property name="Group" value="txGroupWallCovering"/>
+    <property name="PaintCost" value="1" />
+  </modpaint>
+
+  <modpaint id="5" name="Ice 01">
+    <property name="TextureId" value="5"/>
+    <property name="Group" value="txGroupWallCovering"/>
+    <property name="PaintCost" value="1" />
+  </modpaint>
+
+  <modpaint id="6" name="Ice 02">
+    <property name="TextureId" value="6"/>
+    <property name="Group" value="txGroupWallCovering"/>
+    <property name="PaintCost" value="1" />
+    <property name="SortIndex" value="0" />
+  </modpaint>
+
+  <modpaint id="7" name="Wood Plaster 09 Base 01">
+    <property name="TextureId" value="7"/>
+    <property name="Group" value="txGroupWallCovering"/>
+    <property name="PaintCost" value="1" />
+  </modpaint>
+
+  <modpaint id="8" name="White Marble">
+    <property name="TextureId" value="8"/>
+    <property name="Group" value="txGroupWallCovering"/>
+    <property name="PaintCost" value="1" />
+  </modpaint>
+
+</modpaints>

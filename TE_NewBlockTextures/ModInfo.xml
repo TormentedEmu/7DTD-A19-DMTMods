@@ -2,10 +2,10 @@
 <xml>
   <ModInfo>
     <Name value="TE_NewBlockTextures" />
-    <Description value="Loads a set of new block textures(diff, norm, spec) as texture arrays" />
+    <Description value="Loads a set of new block textures(diff, norm, spec) as texture arrays.  Includes a custom paint brush to paint the new textures" />
     <Author value="TormentedEmu" />
-    <Version value="A19.1 b8" />
-    <Website value="" />
+    <Version value="1.1" compat="A19.3 b6" />
+    <Website value="https://github.com/TormentedEmu/7DTD-A19-DMTMods" />
   </ModInfo>
   <DMT>
     <dependencies />

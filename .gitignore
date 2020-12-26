@@ -1,0 +1,9 @@
+
+.vs/
+obj/
+SphereII Legacy Distant Terrain/
+*.user
+TE_NewBlockTextures/Harmony/Harmony-TE_NewBlockTextures.dll
+TE_NewTerrainTextures/Harmony/Harmony-TE_NewTerrainTextures.dll
+TE_MenuMusic/Harmony/Harmony-TE_MenuMusic.dll
+TE_ObjectManipulator/Harmony/Harmony-TE_ObjectManipulator.dll

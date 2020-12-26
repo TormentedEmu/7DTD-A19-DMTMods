@@ -1,0 +1,47 @@
+<configs>
+
+  <append xpath="/recipes" >
+
+    <recipe name="TE_NewBlock01_WoodGateFortified01" count="1">
+      <ingredient name="resourceWood" count="20"/>
+      <ingredient name="resourceScrapIron" count="20"/>
+    </recipe>
+
+    <recipe name="TE_NewBlock02_WoodDoor02" count="1">
+      <ingredient name="resourceWood" count="20"/>
+      <ingredient name="resourceScrapIron" count="20"/>
+    </recipe>
+
+    <recipe name="TE_NewBlock03_WoodGateFortified03" count="1">
+      <ingredient name="resourceWood" count="20"/>
+      <ingredient name="resourceScrapIron" count="20"/>
+    </recipe>
+
+    <recipe name="TE_NewBlock04_StoneWall" count="1">
+      <ingredient name="resourceRockSmall" count="20"/>
+      <ingredient name="resourceConcreteMix" count="20"/>
+    </recipe>
+
+    <recipe name="TE_NewBlock05_Ice01" count="1">
+      <ingredient name="resourceRockSmall" count="20"/>
+      <ingredient name="resourceSnowBall" count="20"/>
+    </recipe>
+
+    <recipe name="TE_NewBlock06_Ice02" count="1">
+      <ingredient name="resourceRockSmall" count="20"/>
+      <ingredient name="resourceSnowBall" count="20"/>
+    </recipe>
+
+    <recipe name="TE_NewBlock07_WoodPlaster09Base01" count="1">
+      <ingredient name="resourceWood" count="20"/>
+      <ingredient name="resourceConcreteMix" count="20"/>
+    </recipe>
+
+    <recipe name="TE_NewBlock08_WhiteMarble" count="1">
+      <ingredient name="resourceRockSmall" count="20"/>
+      <ingredient name="resourcePotassiumNitratePowder" count="20"/>
+    </recipe>
+
+  </append>
+
+</configs>

@@ -1,0 +1,10 @@
+﻿<configs>
+  <append xpath="/xui/ruleset[@name='default']">
+    
+    <window_group name="TE_Materials" >
+      <window name="windowTE_Materials" />
+      <window name="windowTE_MaterialInfo" />
+    </window_group>
+
+  </append>
+</configs>

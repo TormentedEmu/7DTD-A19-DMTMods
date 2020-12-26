@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<uvmapping>
+
+  <uv  id="1" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.3764706,0.372549,0.3294118" globaluv="True" index="1" material="wood" texture="TE_Wood_Gate_Fortified_001.tga" />
+  <uv  id="2" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.2980392,0.1882353,0.1372549" globaluv="True" index="2" material="wood" texture="TE_Wood_Door_002.tga" />
+  <uv  id="3" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.4078431,0.3803922,0.3294118" globaluv="True" index="3" material="wood" texture="TE_Wood_Gate_Fortified_003.tga" />
+  <uv  id="4" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.4392157,0.427451,0.3960784" globaluv="True" index="4" material="stone" texture="TE_SeamlessStoneWall.tga" />
+  <uv  id="5" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.3215686,0.1411765,0.1372549" globaluv="True" index="5" material="stone" texture="TE_Ice_001.tga" />
+  <uv  id="6" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.3647059,0.3333333,0.2784314" globaluv="True" index="6" material="stone" texture="TE_Ice_001.tga" />
+  <uv  id="7" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.3098039,0.3058824,0.2588235" globaluv="True" index="7" material="stone" texture="TE_tudorwoodonplaster09base01.tga" />
+  <uv  id="8" x="0" y="0" w="1" h="1" blockw="1" blockh="1" color="0.3098039,0.3058824,0.2588235" globaluv="True" index="8" material="stone" texture="TE_White_Marble_003.tga" />
+
+</uvmapping>
